@@ -12,7 +12,7 @@
     "start": "react-scripts start",
     "start-dev": "react-scripts --openssl-legacy-provider start",
     "start:lambda": "netlify-lambda serve src/lambda",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider && run-p build:**",
+    "build": "run-p build:**",
     "build:app": "react-scripts build",
     "build:lambda": "netlify-lambda build src/lambda",
     "test": "react-scripts test",
