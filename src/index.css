@@ -1,14 +1,501 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  -main--white: #FFFFFF;
+  -main--lime: rgba(0, 255, 0, 0.17);
+  -main--khaki: rgba(240, 230, 140, 0.5);
+  -main--olive: #808000;
+  -main--green: #00FF00;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+box-sizing: border-box;
+font-size: 1rem;
+scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1rem;
+  font-weight: 400px;
+  line-height: 1.428;
+  font-family: 'Inter', sans-serif;
+}
+
+@media (max-width: 1200px) {
+  html {
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 980px) {
+  html {
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 460px) {
+  html {
+      font-size: 1rem;
+  }
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #FFFFFF;
+  text-align: left;
+}
+
+
+
+li {
+  list-style: none;
+  font-family: 'Inter';
+  font-size: 1rem;
+}
+
+a {
+   color: white;
+   text-decoration: none;
+}
+
+header {
+   position: fixed;
+   top: 0;
+   min-height: 75px;
+   padding: 0px 20px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+
+@media (max-width: 600px) {
+   header {
+       flex-wrap: wrap;
+   }
+}
+
+.nav-logo {
+   width: 60vw;
+}
+
+@media (max-width: 650px) {
+   .nav-logo {
+       margin-top: 15px;
+       width: 100%;
+       position: relative;
+   }
+}
+
+.nav-logo > img {
+width: 100%;
+height: 90%;
+max-width: 100px;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+margin-left: 15px;
+border-radius: 4px;
+}
+
+@media (max-width: 650px) {
+   nav {
+       margin-top: 10px;
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       text-align: center;
+       padding: 0 50px;
+   }
+}
+
+@media (max-width: 650px) {
+   .nav-logo > img {
+       margin: 0 auto;
+   }
+}
+
+nav > ul {
+   width: 35vw;
+   display: flex;
+   font-family: 'Inter';
+   font-weight: 100;
+   font-size: 16px;
+   flex-direction: row;
+   justify-content: space-around;
+}
+
+#hero-bg--image {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   background-image: url(./Images/hero-image.jpg);
+   background-size: cover;
+   height: 593px;
+}
+
+.intro > h1 {
+  position: absolute;
+  width: 960px;
+  height: 8px;
+  top: 314px;
+  font-family: 'Inter';
+  font-weight: 600;
+  left: 35px;
+  font-size: 55px;
+  line-height: 1.428;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+}
+
+.intro > p {
+  position: absolute;
+  width: 600px;
+  left: 35px;
+  top: 390px;
+  font-family: 'Inter';
+  font-size: 1.1rem;
+  line-height: 1.428;
+  color: #FFFFFF;
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  position: absolute;
+  width: 159.18px;
+  height: 44.61px;
+  margin-left: 1000px;
+  margin-top: 480px;
+}
+
+.hero-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 11.3049px 18.0879px;
+  width: 159.18px;
+  height: 44.61px;
+  background: #00FF00;
+  border-radius: 23px;
+  border: none;
+  flex: none;
+}
+
+.button-text {
+  width: 123px;
+  height: 1.6rem;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  color: #000000;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.courses-heading {
+  width: 737.16px;
+  left: 35px;
+  margin-top: -4.2rem;
+  font-family: 'Inter';
+  font-weight: 600;
+  font-size: 2.5rem;
+  line-height: 1.428;
+  display: flex;
+  color: #152536;
+}
+
+
+
+.courses-section {
+  background-color: white;
+  padding: 6.3rem;
+  margin-bottom: -3.4rem;
+}
+/* Sets 3 by 3 grid template*/
+.courses-grid {
+  display: inline-grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 2.7rem;
+  max-width: 100%;
+}
+/*Grids have media queries, what else does? */
+@media (max-width: 30.625em) {
+  .courses-section {
+      padding: 6rem 1rem;
+  }
+  .courses-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+.courses-name {
+  color: #808080;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.link {
+  box-shadow: 0 1px #00FF00;
+  text-decoration: none;
+
+}
+
+.fa-light {
+  color: #000000;
+  margin: 5px;
+}
+
+.courses-image {
+  height: calc(100% - 5rem);
+  width: 100%;
+  object-fit: cover;
+}
+/*I dont know if i should name the staff images? for text-align prop*/
+.about-section {
+  background-color: rgba(0, 255, 0, 0.17);
+  padding: 2.7rem;
+  height: 590px;
+}
+
+.staff-grid {
+  display: inline-grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+  max-width: 9px;
+}
+
+
+@media (max-width: 30.625em) {
+  .about-section {
+      padding: 6rem 1rem;
+  }
+  .staff-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+.about-text {
+  position: relative;
+  width: 548px;
+  height: 318px;
+  left: 613px;
+  margin-top: -549px;
+}
+
+h3 {
+width: 148px;
+height: 1.6rem;
+margin-bottom: 2px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 1.5rem;
+line-height: 1.6rem;
+color: #152536;
+}
+
+.about-text > p {
+  width: 630px;
+  height: 100px;
+  left: 613px;
+  font-size: 1rem;
+}
+
+.about-button {
+  display: flex;
+  flex-direction: row;
+  padding: 11.3049px 0.0879px;
+  width: 150.18px;
+  height: 45px;
+  margin-left: 0px;
+  margin-top: 40px;
+  background: #00FF00;
+  border-radius: 1rem;
+  border: none;
+}
+
+.link-text--button {
+  width: 152px;
+  height: 25px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  text-align: center;
+  color: #000000;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.testimonial-section {
+  width: 100%;
+  height: 600px;
+  left: 0px;
+  margin-top: 280px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.testimonial-section > h3 {
+  font-family: 'Inter';
+  width: 600px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 1.6rem;
+  display: flex;
+  color: #353535;
+  margin-bottom: 0px;
+  margin-left: 46px;
+}
+
+.card-deck {
+  display: flex;
+  width: 100%;
+  padding: 2.5rem;
+}
+
+.card-body {
+width: 350px;
+height: 370px;
+margin-right: 46px;
+margin-top: -186px;
+background: #FFFFFF;
+border: 1px solid #808000;
+border-radius: 0px;
+}
+
+.card-img-top {
+  width: 349px;
+  height: 180px;
+  background: #ABB5BE;
+  border-radius: 0px;
+}
+
+.card-title {
+width: 125px;
+height: 34px;
+margin-left: 30px;
+margin-top: 203px;
+margin-bottom: 8px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 1.75rem;
+line-height: 1.4em;
+color: #152536;
+}
+
+.card-text {
+  width: 310px;
+  height: 72px;
+  margin-left: 30px;
+  top: 353px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4em;
+  color: #68717A;
+}
+
+.card-footer {
+  width: 350px;
+  height: 59px;
+  left: 46px;
+  top: 506px;
+  background: rgba(0, 255, 0, 0.11);
+  border: 1px solid #808000;
+  border-radius: 0px;
+}
+.text-muted {
+  width: 138px;
+  margin-left: 30px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ABB5BE;
+}
+
+.footer-section {
+  width: 100%;
+  height: 360px;
+  left: 0px;
+  background: rgba(0, 255, 0, 0.17);
+}
+
+.footer-logo {
+  width: 150px;
+  height: 70px;
+  margin-left: 455px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-radius: 7px;
+}
+
+.footer-content--left {
+  width: 130px;
+  height: 168px;
+  margin-left: 518px;
+  line-height: 1.6em;
+  font-size: 1rem;
+}
+
+.footer-content--right {
+  width: 465px;
+  height: 246px;
+  margin-left: 640px;
+  margin-top: -170px;
+  line-height: 1.8em;
+  font-size: 1rem;
+}
+
+.footer-button {
+  display: flex;
+  width: 115px;
+  flex-direction: row;
+  align-items: center;
+  padding: 11.3049px 18.0879px;
+  margin-left: 500px;
+  margin-top: -124px;
+  background: #00FF00;
+  border-radius: 16px;
+  border: none;
+}
+
+.btn-text {
+  width: 90px;
+  height: 25px;
+  margin-left: -6px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.4em;
+  text-align: center;
+  color: #000000;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
 }

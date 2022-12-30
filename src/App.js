@@ -1,47 +1,55 @@
 import React, { Component } from "react"
-import logo from "./logo.svg"
 import "./App.css"
 
-class LambdaDemo extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { loading: false, msg: null }
-  }
+//ported
+import Navbar from "./components/Navbar.js"
+import Herocontent from "./components/Herocontent.js"
+import Herosection from "./components/Herosection.js"
+import About from "./components/About.js"
+import Aboutcontent from "./components/Aboutcontent.js"
+import Testimonialcards from "./components/Testimonialcards.js"
+import Footer from "./components/Footer.js"
 
-  handleClick = api => e => {
-    e.preventDefault()
+// class LambdaDemo extends Component {
+//   constructor(props) {
+//     super(props)
+//     this.state = { loading: false, msg: null }
+//   }
 
-    this.setState({ loading: true })
-    fetch("/.netlify/functions/" + api)
-      .then(response => response.json())
-      .then(json => this.setState({ loading: false, msg: json.msg }))
-  }
+//   handleClick = api => e => {
+//     e.preventDefault()
 
-  render() {
-    const { loading, msg } = this.state
+//     this.setState({ loading: true })
+//     fetch("/.netlify/functions/" + api)
+//       .then(response => response.json())
+//       .then(json => this.setState({ loading: false, msg: json.msg }))
+//   }
 
-    return (
-      <p>
-        <button onClick={this.handleClick("hello")}>{loading ? "Loading..." : "Call Lambda"}</button>
-        <button onClick={this.handleClick("async-dadjoke")}>{loading ? "Loading..." : "Call Async Lambda"}</button>
-        <br />
-        <span>{msg}</span>
-      </p>
-    )
-  }
-}
+//   render() {
+//     const { loading, msg } = this.state
+
+//     return (
+//       <p>
+//         <button onClick={this.handleClick("hello")}>{loading ? "Loading..." : "Call Lambda"}</button>
+//         <button onClick={this.handleClick("async-dadjoke")}>{loading ? "Loading..." : "Call Async Lambda"}</button>
+//         <br />
+//         <span>{msg}</span>
+//       </p>
+//     )
+//   }
+// }
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <LambdaDemo />
-        </header>
+      <div>
+        <Navbar />
+        <Herocontent />
+        <Herosection />
+        <About />
+        <Aboutcontent />
+        <Testimonialcards />
+        <Footer />
       </div>
     )
   }
